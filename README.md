@@ -1,32 +1,34 @@
-🔐 Next.js Authentication with Middleware & Private Routing
+# 🔐 Next.js Authentication with Middleware & Private Routing  
 
-This project implements a simple and secure authentication system with Next.js (App Router).
-After logging in, users receive a token/cookie, and protected pages (Private Routes) are only accessible if the user is authenticated.
+[![Next.js](https://img.shields.io/badge/Next.js-13+-black?logo=next.js)](https://nextjs.org/)  
+[![Auth](https://img.shields.io/badge/Auth-Middleware%20%26%20Cookies-pink)](#)  
 
-✨ Features
+A **simple and secure authentication system** built with **Next.js (App Router)**.  
+Users receive a **token/cookie** upon login, and only authenticated users can access protected pages.  
 
-✅ Next.js Middleware for access control
+---
 
-✅ Protected Routes (only accessible to authenticated users)
+## ✨ Features  
 
-✅ Secure token storage in cookies (HttpOnly / Secure)
+- 🔒 **Next.js Middleware** for route protection  
+- 🛡 **Protected Routes** – only available to authenticated users  
+- 🍪 **Secure token storage** using cookies (HttpOnly / Secure)  
+- 🔄 **Automatic redirects**  
+  - 🚫 Unauthenticated → `/login`  
+  - ✅ Authenticated → `/dashboard`  
+- 🧩 **Clean & extensible architecture** – easy to integrate  
 
-✅ Automatic redirects:
+---
 
-Unauthenticated users → redirected to /login
+## 📂 Project Structure  
 
-Authenticated users → redirected to /dashboard
+```bash
+app/
+ ├─ login/            # Login page
+ │   └─ page.tsx
+ ├─ dashboard/        # Protected page
+ │   └─ page.tsx
+ |
+ ├─ middleware.ts     # Auth middleware
+ └─ page.tsx          # Home page
 
-✅ Clean and extensible structure for real-world projects
-
-
-
-🚀 Future Improvements
-
-Add Signup (registration)
-
-Implement real JWT with bcrypt + database
-
-Role-based authentication (admin/user)
-
-Refresh token & logout flow
